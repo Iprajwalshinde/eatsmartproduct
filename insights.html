@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Latest Insights</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+        <link href="css/insight.css" rel="stylesheet">
+        <link href="css/chat_bot.css" rel="stylesheet">       
+
+    </head>
+    
+    <body class="topics-listing-page" id="top">
+     
+        <main>
+            <div id="chat-icon"></div>
+            <div id="chat-window">
+                <div id="chat-header">
+                <span id="chat-title">EatSmart ChatAI</span>
+                <button id="close-button" aria-label="Close chat window">✕</button>
+                </div>
+                <div id="chat-history"></div>
+                <div id="input-area">
+                <input type="text" id="user-message" placeholder="Type your question...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logoES">EatSmart</span>
+                    </a>
+
+                    <div class="d-lg-none ms-auto me-4">
+                        <a href="admin/index.php" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html#hero">Home</a>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="./insights.html">Insights</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html#about">About</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#work">How It Work</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#faqs">FAQs</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">Contact</a>
+                            </li>
+                           
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="admin/index.php" class="navbar-icon bi-person smoothscroll"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Insights</li>
+                                </ol>
+                            </nav>                           
+                        </div>
+                        <div class="col-lg-12 col-12 text-center">
+                            <h3 class="mb-4 insights">Latest Insights</h3>
+                        </div>
+                    </div>
+                </div>
+            </header> -->
+            <div class="writeBtn centerlise">
+                <button class="custom-btn mt-4 centerlise" id="openModalBtn">Write Insight</button>
+            </div>
+            <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Insights</li>
+                                </ol>
+                            </nav>                           
+                        </div>
+                        <div class="col-lg-12 col-12 text-center ">
+                            <h3 class="mb-4 LatestInsight">Latest Insights</h3>
+                        </div>
+
+                        <div class="col-lg-8 col-12 mt-3 mx-auto" id="posts-container">
+                            <!-- Posts will be dynamically loaded here -->
+                        </div>
+                        
+                        <div class="col-lg-12 col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center mb-0" id="pagination">
+                                    <!-- Pagination links will be dynamically loaded here -->
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <!-- Modal for reporting fallacies -->
+                        <div class="modal fade" id="reportFallacyModal" tabindex="-1" role="dialog" aria-labelledby="reportFallacyLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="reportFallacyLabel">Report Fallacy</h5>
+                                <button type="button" class="close" onclick="closeModal()" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form id="reportFallacyForm">
+                                  <div class="form-group">
+                                    <label for="reason">Reason</label>
+                                    <select class="form-control" id="reason" required>
+                                      <option value="spam">Spam</option>
+                                      <option value="misleading">Misleading</option>
+                                      <option value="offensive">Offensive</option>
+                                      <!-- Add other reasons as needed -->
+                                    </select>
+                                  </div>
+                                  <input type="hidden" id="postId" name="postId">
+                                  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                                  <div class="messageAlert" id="messageAlert"></div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="insightModal" class="modalInsight">
+                            <div class="modal-contentInsight">
+                                <span class="close" onclick="closeInsight()">&times;</span>
+                                <h2>Write Insight</h2>
+                                <form id="insightForm">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" id="title" class="form-control" name="title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea id="description" name="description" class="form-control" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tag_category">Tag Category</label>
+                                        <input type="text" id="tag_category" class="form-control" name="tag_category" required>
+                                    </div>
+                                    <input type="hidden" id="reportFallacy" name="reportFallacy" value="0">
+                                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+		<footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mb-4 pb-2">
+                        <a class="navbar-brand mb-2" href="index.html">
+                            <span class="logoES">EatSmart</span>
+                        </a>
+                        <p data-content="paragraph">Uncover the real scoop on products with our community-driven platform</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="index.html#hero" class="site-footer-link">Home</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="index.html#work" class="site-footer-link">How it works</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="index.html#faqs" class="site-footer-link">FAQs</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="./insights.html" class="site-footer-link">Insights</a>
+                            </li>
+                            <li class="site-footer-link-item">
+                                <a href="./contact.html" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+                        <p class="text-white d-flex mb-1">
+                            <a href="tel:  +91 79994 54660" class="site-footer-link">
+                                +91 79994 54660
+                            </a>
+                        </p>
+                        <p class="text-white d-flex">
+                            <a href="mailto:info@company.com" class="site-footer-link">
+                                info@EatSmart.com
+                            </a>
+                        </p>
+                    </div>
+                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2024 EatSmart. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/insight.js"></script> <!--Fetch and Report JS-->
+        <script src="js/writeInsight.js"></script> <!--Fetch and Report JS-->
+        <script src="js/chatbot.js"></script>
+
+    </body>
+</html>

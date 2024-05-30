@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - EatSmart</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="shortcut icon" href="../images/icon/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <img class="wave" src="img/wave.png" />
+    <div class="container">
+      <div class="img">
+        <img src="../images/featured.png" />
+      </div>
+      <div class="login-content">
+        <form action="index.html" method="post" enctype="multipart/form-data">
+          <span class="logoES">EatSmart</span><br />
+          <img src="img/avatar.jpg" />
+          <h2 class="title">Welcome</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <h5>Username</h5>
+              <input type="text" id="username" name="username" class="input" />
+            </div>
+          </div>
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+              />
+            </div>
+          </div>
+          <a href="#">Forgot Password?</a>
+          <input type="submit" class="btn" value="Login" />
+
+          <div class="message"></div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Send AJAX request to check login status
+        $.ajax({
+          type: "POST",
+          url: "check_login.php", // URL to check login status
+          success: function (response) {
+            // Check the response
+            if (response.trim() == "authenticated") {
+              // Redirect to admin page
+              window.location.href = "../admin/";
+            } else {
+              // no any query passs here because it stay on login page if user not logged in
+            }
+          },
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("form").on("submit", function (event) {
+          event.preventDefault();
+          var username = $("#username").val();
+          var password = $("#password").val();
+
+          // Basic input validation
+          if (!username || !password) {
+            $(".message")
+              .text("Please enter both username and password")
+              .css("color", "red");
+            return;
+          }
+
+          var formData = {
+            username: username,
+            password: password,
+          };
+
+          $.ajax({
+            type: "POST",
+            url: "login.php",
+            data: formData,
+            encode: true,
+            success: function (response) {
+              var parts = response.split("|");
+              if (parts[0] === "success") {
+                $(".message").text(parts[1]).css("color", "green");
+                // Redirect to admin page upon successful login
+                console.log("success");
+                window.location.href = "../admin/";
+              } else {
+                $(".message").text(parts[1]).css("color", "red");
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              console.log("Ajax request failed:", textStatus);
+              $(".message")
+                .text("Error: " + errorThrown)
+                .css("color", "red");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

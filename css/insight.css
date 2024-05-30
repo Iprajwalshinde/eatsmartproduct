@@ -1,0 +1,45 @@
+.modalInsight {
+    display: none; 
+    position: fixed; 
+    z-index: 200; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 40px; 
+}
+
+.modal-contentInsight {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#insightForm .form-control:focus{
+    border: 1.5px var(--secondary-color) solid;
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, .25);
+}
+#insightForm label {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}

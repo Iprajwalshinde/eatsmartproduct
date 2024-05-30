@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>EatSmart - Health & Wellness</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+        <!-- chatbot css -->
+        <link href="css/chat_bot.css" rel="stylesheet">       
+
+    </head>
+    
+    <body id="top">
+        <div id="chat-icon"></div>
+            <div id="chat-window">
+                <div id="chat-header">
+                <span id="chat-title">EatSmart ChatAI</span>
+                <button id="close-button" aria-label="Close chat window">✕</button>
+                </div>
+                <div id="chat-history"></div>
+                <div id="input-area">
+                <input type="text" id="user-message" placeholder="Type your question...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logoES">EatSmart</span>
+                    </a>
+
+                    <div class="d-lg-none ms-auto me-4">
+                        <a href="admin/index.php" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#hero">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="./insights.html">Insights</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#about">About</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#work">How It Work</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faqs">FAQs</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">Contact</a>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="admin/index.php" class="navbar-icon bi-person smoothscroll"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+
+            <section class="hero-section d-flex justify-content-center align-items-center" id="hero">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <h1 class="text-center headingPage" data-content="data-content">Namaste!,🧑🏻<span> Trusted Consumer Insights</span></h1>
+
+                            <h6 class="text-center" data-content="paragraph">Uncover the real scoop on products with our community-driven platform</h6>
+
+                            <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="product.php" role="search">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-text bi-search" id="basic-addon1"></span>
+                                    <input name="q" type="search" class="form-control" id="keyword" placeholder="Search a Product..." aria-label="Search">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                    <div id="suggestions">
+                                        <!-- Suggestions will appear here -->
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div id="barcodeScanner">
+                                <button class="custom-btn scan" id="cameraIcon">Scan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-padding section-bg" id="about">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-5 col-12">
+                            <img src="images/featured.png" class="about-image img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-6 col-12 d-flex about-wrap justify-content-center align-items-center">
+                            <div class="aboutUs">
+                                <h4 class="mb-4" data-content="header">About Us</h4>
+                                <p data-content="paragraph">Welcome to EatSmart, your trusted companion on the journey to a healthier and more informed lifestyle. At EatSmart, we believe that making conscious choices about what you consume should be simple, transparent, and empowering. Our mission is to provide you with the tools and knowledge needed to make informed dietary decisions, ultimately contributing to a healthier, happier society.
+                                        <br> <br> 
+                                    In a world where the market is saturated with potentially harmful edible products, EatSmart envisions a transformative shift in consumer behavior. We aim to be the go-to platform for individuals seeking accurate and detailed insights into the products they consume, enabling them to make choices that align with their health and wellness goals.</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline-section section-padding" id="work">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2 class="text-white mb-4" data-content="header">How does it work?</h1>
+                        </div>
+
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="timeline-container">
+                                <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                                    <div class="list-progress">
+                                        <div class="inner"></div>
+                                    </div>
+
+                                    <li>
+                                        <h4 class="text-white mb-3" data-content="header">Search or Scan Products</h4>
+
+                                        <p class="text-white" data-content="paragraph">Search for a product and select from the suggestions. On mobile devices, you also have the option to scan the product's barcode.</p>
+
+                                        <div class="icon-holder">
+                                          <i class="bi-search"></i>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <h4 class="text-white mb-3" data-content="header">Processing Your Selection</h4>
+
+                                        <p class="text-white" data-content="paragraph">We are processing the product you selected or scanned to retrieve its data.</p>
+
+                                        <div class="icon-holder">
+                                          <i class="bi-clock-history"></i>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <h4 class="text-white mb-3" data-content="header">Understand Product Intake</h4>
+
+                                        <p class="text-white" data-content="paragraph">You will now receive details on how to use (intake) the product.</p>
+
+                                        <div class="icon-holder">
+                                          <i class="bi-book"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 text-center mt-5">
+                            <p class="text-white">
+                                Want to learn more?
+                                <a href="#" class="btn custom-btn custom-border-btn ms-3">Check out Youtube</a>
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="faq-section section-padding" id="faqs">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4"  data-content="header">Frequently Asked Questions</h2>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-lg-5 col-12">
+                            <img src="images/faq_graphic.jpg" class="img-fluid" alt="FAQs">
+                        </div>
+
+                        <div class="col-lg-6 col-12 m-auto">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  data-content="header">
+                                            What is EatSmart?
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body" data-content="paragraph">
+                                            EatSmart helps you make informed food choices by providing detailed nutritional insights, empowering healthier eating habits.  
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed"  data-content="header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            How does EatSmart ensure information accuracy?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body" data-content="paragraph">
+                                            We regularly update our database with the latest nutritional data and research, reviewed by our team of experts.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed"  data-content="header" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Does EatSmart offer community support?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body" data-content="paragraph">
+                                            Yes, EatSmart has a community feature where users can share tips, recipes, and support each other in their health and wellness journeys.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-section section-padding section-bg" id="section_5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center">
+                            <h2 class="mb-5"  data-content="header">Get in touch</h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                            <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5335.087513005336!2d75.33906678499703!3d19.875909881239217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3003e700f75%3A0xf92203d69cf0a32d!2sChhatrapati%20Sambhajinagar!5e1!3m2!1sen!2sin!4v1716614786152!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
+                            <h4 class="mb-3"  data-content="header">Head office</h4>
+
+                            <p>80 Shantiban Bypass Street, 3rd Floor. San , Chh. Sambhajinagar, 431001</p>
+
+                            <hr>
+
+                            <p class="d-flex align-items-center mb-1">
+                                <span class="me-2"  data-content="header">Phone</span>
+
+                                <a href="tel: +917999454660" class="site-footer-link">
+                                    +91 79994 54660
+                                </a>
+                            </p>
+
+                            <p class="d-flex align-items-center">
+                                <span class="me-2"  data-content="header">Email</span>
+
+                                <a href="mailto:info@EatSmart.com" class="site-footer-link">
+                                    info@EatSmart.com
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                            <form class="custom-form subscribe-form" action="#" method="post" role="form" id="newsletter-form">
+                                <h4 class="mb-4 pb-2"  data-content="header">Get Newsletter</h4>
+                                <input type="email" name="subscribe-email" id="subscribe-email" class="form-control" placeholder="Email Address" required="">
+                                <div class="col-lg-12 col-12">
+                                    <button type="submit" class="form-control" id="subscribe-button">Subscribe</button>
+                                </div>
+                                <div id="message" class="message"></div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mb-4 pb-2">
+                        <a class="navbar-brand mb-2" href="index.html">
+                            <span class="logoES">EatSmart</span>
+                        </a>
+                        <p data-content="paragraph">Uncover the real scoop on products with our community-driven platform</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <h6 class="site-footer-title mb-3">Resources</h6>
+
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#top" class="site-footer-link">Home</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#work" class="site-footer-link">How it works</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#faqs" class="site-footer-link">FAQs</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="./insights.html" class="site-footer-link">Insights</a>
+                            </li>
+                            
+                            <li class="site-footer-link-item">
+                                <a href="./contact.html" class="site-footer-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                        <h6 class="site-footer-title mb-3">Information</h6>
+
+                        <p class="text-white d-flex mb-1">
+                            <a href="tel:  +91 79994 54660" class="site-footer-link">
+                                +91 79994 54660
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <a href="mailto:info@EatSmart.com" class="site-footer-link">
+                                info@EatSmart.com
+                            </a>
+                        </p>
+                    </div>
+
+                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2024 EatSmart. All rights reserved.</p>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script> <!-- v3.6.0 -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/barcodeScanner.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#keyword').on('input', function() {
+                var input = $(this).val();
+                if (input.length > 0) {
+                    $.ajax({
+                        url: 'fetch_suggestions.php', // Path to PHP file
+                        type: 'GET',
+                        data: { input: input },
+                        success: function(response) {
+                            // Parse JSON response
+                            var suggestions = JSON.parse(response);
+                            var suggestionsHtml = '';
+
+                            suggestions.forEach(function(suggestion) {
+                                suggestionsHtml += '<div class="suggestion-item">' + suggestion + '</div>';
+                            });
+
+                            $('#suggestions').html(suggestionsHtml).show();
+                        }
+                    });
+                } else {
+                    $('#suggestions').hide();
+                }
+            });
+
+            $('#suggestions').on('click', '.suggestion-item', function() {
+                $('#keyword').val($(this).text());
+                $('#suggestions').hide();
+            });
+
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#keyword').length && !$(e.target).is('.suggestion-item')) {
+                    $('#suggestions').hide();
+                }
+            });
+        });
+      </script>
+
+<script>
+    $(document).ready(function() {
+         $('#newsletter-form').submit(function(event) {
+             event.preventDefault(); // Prevent the default form submission
+             var email = $('#subscribe-email').val();
+             var button = $('#subscribe-button');
+             var message = $('#message');
+
+             button.html('<div class="loader"></div>'); // Add loader to button
+             message.removeClass('success error');
+
+             $.ajax({
+                 type: "POST",
+                 url: "subscribe.php",
+                 data: {email: email},
+                 success: function(data) {
+                     message.addClass('success').html(data); // Display success message
+                     button.text('Subscribe'); // Reset button text
+                 },
+                 error: function() {
+                     message.addClass('error').html('Failed to subscribe.'); // Display error message in red
+                     button.text('Subscribe');
+                 }
+             });
+         });
+     });
+
+ </script>
+    </body>
+</html>

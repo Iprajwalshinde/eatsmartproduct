@@ -1,0 +1,44 @@
+body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; }
+        .pc-font-alt { font-family: Arial, sans-serif !important; }
+        @media screen and (max-width: 620px) {
+            .pc-project-container { width: 100% !important; }
+            .pc-w620-width-130 { width: 130px !important; }
+        }
+        body {
+            margin: 0; padding: 0; background-color: #ffffff;
+        }
+        .headerTd{
+            background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); color: #fff; padding: 10px; text-align: center; font-family: Arial, sans-serif; height: 100px;
+        }
+        .tableMiddle{
+            width: 600px; max-width: 600px; background-color: #ffffff;
+        }
+        .newsletterHeading{
+            font-family: 'Arial', sans-serif; color: #40be65; font-size: 18px; font-weight: 700; letter-spacing: 2px;
+        }
+        .postHeading{
+            font-family: 'Arial', sans-serif; color: #000; font-size: 36px;
+        }
+        .postMessage{
+            font-family: 'Arial', sans-serif; color: #000; font-size: 18px;
+        }
+        .postButton{
+            background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); color: #ffffff; padding: 15px; border-radius: 8px; text-decoration: none; font-size: 16px; font-family: 'Arial', sans-serif; margin-top: 20px; display: inline-block; min-width: 100px;
+        }
+        .postFooter{
+            background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); color: #fff; padding: 10px; text-align: center; font-family: Arial, sans-serif;
+        }
+        .newsletterUnsubcribe{
+            background-color: #333; color: #fff; padding: 10px; text-align: center; font-family: Arial, sans-serif;
+        }
+        .logoImg{
+            margin: 0 auto 20px auto; display: block; border: 0; outline: none;
+        }
+        .widthOftble{
+            width: 600px; max-width: 600px;
+        }
+        .link{
+            color: #ffffff; text-decoration: none;
+        }
